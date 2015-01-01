@@ -1,0 +1,19 @@
+<form class="col-md-10">
+    <div name="normal_round_div" ng-hide="sol_round">
+        <label class="label">Antal stik taget:</label>
+        <select class="form-control input-lg" ng-model="stickTaken"
+                ng-options="n.toString() for n in range(0, 13)"></select>
+    </div>
+    <div name="sol_round_div" ng-show="sol_round">
+        <div ng-repeat="player in teamA">
+            <div class="btn-group btn-group-lg btn-block">
+                <button class="btn modbtn btn-default" ng-class="{'btn-primary': winners[players.indexOf(player)], 'active': winners[players.indexOf(player)]}" type="button" ng-click="winners[players.indexOf(player)]=true">Vandt</button>
+                <button class="btn modbtn">{{ player }}</button>
+                <button class="btn modbtn btn-default" ng-class="{'btn-primary': winners[players.indexOf(player)]===false, 'active': winners[players.indexOf(player)]===false}" type="button" ng-click="winners[players.indexOf(player)]=false">Tabte</button>
+            </div>
+            {{ winners }}
+        </div>
+    </div>
+    <button class="btn btn-default btn-lg btn-block" ng-show="game_started" ng-click="back()">Back</button>
+    <button class="btn btn-default btn-lg btn-block" ng-disabled="!finishRoundAllowed()" ng-click="finishRound()">Finish round</button>
+</form>

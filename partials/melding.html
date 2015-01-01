@@ -1,0 +1,56 @@
+<form class="col-md-10" role="form">
+
+    <div class="form-group">
+        <label for="melder">Melder:</label>
+        <select id="melder" class="error_{{melder_error}} form-control input-lg" ng-model="melder"
+                ng-options="p for p in players"></select>
+
+        <label for="antalStik">Antal stik:</label>
+        <select id="antalStik" class="form-control input-lg" ng-model="stick"
+                ng-options="s.name for s in sticks"
+                ng-change="checkSticks()"></select>
+    </div>
+
+    <div class="btn-group btn-group-lg btn-block" data-toggle="buttons">
+        <label id="{{ modifiers[0].id }}" class="btn btn-default modbtn" ng-click="setModifier(0)">
+            <input type="checkbox">{{modifiers[0].name}}
+        </label>
+        <label id="{{ modifiers[1].id }}" class="btn btn-default modbtn" ng-click="setModifier(1)">
+            <input type="checkbox">{{modifiers[1].name}}
+        </label>
+        <label id="{{ modifiers[2].id }}" class="btn btn-default modbtn" ng-click="setModifier(2)">
+            <input type="checkbox">{{modifiers[2].name}}
+        </label>
+    </div>
+
+    <div class="btn-group btn-group-lg btn-block" data-toggle="buttons">
+        <label id="{{ modifiers[3].id }}" class="btn btn-default modbtn" ng-click="setModifier(3)">
+            <input type="checkbox">{{modifiers[3].name}}
+        </label>
+        <label id="{{ modifiers[4].id }}" class="btn btn-default modbtn" ng-click="setModifier(4)">
+            <input type="checkbox">{{modifiers[4].name}}
+        </label>
+        <label id="{{ modifiers[5].id }}" class="btn btn-default modbtn" ng-click="setModifier(5)">
+            <input type="checkbox">{{modifiers[5].name}}
+        </label>
+    </div>
+
+
+    <div class="priceDiv">
+            <span class="well well-sm">
+                <label>Pr stik</label>
+                <span class="glyphicon glyphicon-chevron-up">{{gevinst_per_stik}}</span>
+                <span class="glyphicon glyphicon-chevron-down">{{tab_per_stik}}</span>
+                </span>
+            <span class="well well-sm">
+                <label class="">Max</label>
+                <span class="glyphicon glyphicon-chevron-up">{{max_gevinst}}</span>
+                <span class="glyphicon glyphicon-chevron-down">{{max_tab}}</span>
+                </span>
+    </div>
+
+    <button class="btn btn-default btn-lg btn-block form-margin" ng-disabled="!melder"
+            ng-click="startRound()">
+        Start round
+    </button>
+</form>

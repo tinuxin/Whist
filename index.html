@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html ng-app="Whist" lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Whist calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Et whist regnskabs app">
+    <meta name="author" content="Tinus Mørch Abell">
+
+    <!-- Le styles -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+    <!--<link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">-->
+    <link href="whist.css" rel="stylesheet">
+    <!--<style type="text/css">-->
+    <!--body {-->
+    <!--padding-top: 60px;-->
+    <!--padding-bottom: 40px;-->
+    <!--}-->
+    <!--</style>-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/bootstrap/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="assets/bootstrap/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="assets/bootstrap/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+          href="assets/bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/bootstrap/ico/apple-touch-icon-57-precomposed.png">
+
+    <!--Restrict navigation-->
+    <script type=text/javascript>
+        window.onbeforeunload = function () {
+            return "Are you sure you want to leave, you will end the current game?";
+        };
+        //        window.onbeforeunload = function (evt) {
+        //            var message = ‘Are you sure you want to leave, you will end the current game?’;
+        //            if (typeof evt == ‘undefined’) {
+        //                evt = window.event;
+        //            }
+        //            if (evt) {
+        //                evt.returnValue = message;
+        //            }
+        //            return message;
+        //        }
+
+    </script>
+</head>
+
+<body>
+<!--<div class="navbar navbar-fixed-top">-->
+<!--<div class="navbar-inner">-->
+<!--<div class="container">-->
+<!--<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">-->
+<!--<col-md- class="icon-bar"></col-md->-->
+<!--<col-md- class="icon-bar"></col-md->-->
+<!--<col-md- class="icon-bar"></col-md->-->
+<!--</a>-->
+<!--<a class="brand" href="#">Whist</a>-->
+<!--<div class="nav-collapse">-->
+<!--<ul class="nav">-->
+<!--<li class="active"><a href="#">Home</a></li>-->
+<!--<li><a href="#about">Game</a></li>-->
+<!--<li><a href="#contact">Contact</a></li>-->
+<!--</ul>-->
+<!--</div>&lt;!&ndash;/.nav-collapse &ndash;&gt;-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<div name="score_container" class="col-md-12 container">
+    <div class="header col-md-12" style="width: 100%">
+        <h1 class="col-md-12">
+            <small class="col-md-12">Whist regnskab</small>
+            <button class="btn" ng-click="toggleScore()" ng-disabled="!game_started">Score</button>
+        </h1>
+    </div>
+
+    <div ng-view></div>
+</div>
+
+
+
+<!-- /container -->
+<hr/>
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script src="js/graphcontroller.js"></script>
+<script src="js/holdcontroller.js"></script>
+<script src="js/meldingcontroller.js"></script>
+<script src="js/resultatcontroller.js"></script>
+<script src="js/scorecontroller.js"></script>
+<script src="js/startcontroller.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

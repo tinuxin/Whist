@@ -1,0 +1,14 @@
+<form name="teams" class="col-md-10">
+    <label>Hold</label>
+    <div ng-repeat="player in players">
+        <div class="btn-group btn-group-lg btn-block">
+            <button class="btn modbtn btn-default" ng-class="{'btn-primary': teamAContains(player), 'active': teamAContains(player)}" type="button" ng-click="addToTeam(player, 'A')" ng-disabled="player==melder">Hold A</button>
+            <button class="btn modbtn">{{ player }}</button>
+            <button class="btn modbtn btn-default" ng-class="{'btn-primary': teamBContains(player), 'active': teamBContains(player)}" type="button" ng-click="addToTeam(player, 'B')" ng-disabled="player==melder">Hold B</button>
+        </div>
+    </div>
+    <label>Hånden der spilles er: {{hand}}</label>
+    <button class="btn btn-default btn-lg btn-block"  ng-show="game_started" ng-click="back()">Back</button>
+    <button class="btn btn-default btn-lg btn-block" ng-disabled="teamA.length+teamB.length==4" ng-click="restToB()">Add rest to teamB</button>
+    <button class="btn btn-default btn-lg btn-block" ng-disabled="(teamA.length+teamB.length)!=4" ng-click="teamsDefined()">Next</button>
+</form>

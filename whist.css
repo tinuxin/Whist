@@ -1,0 +1,44 @@
+/*@import url('http://twitter.github.com/bootstrap/assets/css/bootstrap.css');*/
+
+.error_true {
+    background: #E18383;
+}
+.error_false {
+}
+
+.deal {
+    background-color: #70B8FF;
+}
+
+.header {
+    background-color: dimgray;
+    text-align: center;
+    color: #000000;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.name {
+    width: 90%;
+}
+
+.namerow {
+    margin: auto;
+}
+
+    .form-margin {
+    margin-top: 1%;
+}
+
+.modbtn {
+    width: 33%;
+}
+
+.priceDiv {
+    text-align: center;
+    margin: 4% 1%;
+}
+
+.priceLabel {
+    margin-left: 2.5%;
+}

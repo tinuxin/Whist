@@ -1,0 +1,45 @@
+<form class="col-md-10 col-md-offset-1" role="form">
+
+    <div class="form-group">
+        <label for="navn1">Spillere:</label>
+        <input id="navn1" class="col-md-10 input-lg error_{{name_errors[0]}} form-control" type="text"
+               placeholder="player1"
+               ng-model="players[0]"
+               name="player1_name" ng-disabled="game_started" tabindex="1"/>
+        <input id="navn2" class="col-md-10 input-lg error_{{name_errors[1]}} form-control form-margin" type="text"
+               placeholder="player2"
+               ng-model="players[1]"
+               name="player2_name" ng-disabled="game_started" tabindex="2"/>
+        <input id="navn3" class="col-md-10 input-lg error_{{name_errors[2]}} form-control form-margin" type="text"
+               placeholder="player3"
+               ng-model="players[2]"
+               name="player3_name" ng-disabled="game_started" tabindex="3"/>
+        <input id="navn4" class="col-md-10 input-lg error_{{name_errors[3]}} form-control form-margin" type="text"
+               placeholder="player4"
+               ng-model="players[3]"
+               name="player4_name" ng-disabled="game_started" tabindex="4"/>
+    </div>
+
+    <label class="form-margin" for="baseScoreSelector">Grund sats:</label>
+
+    <div>
+        <div id="baseScoreSelector" class="input-group col-md-4 col-md-offset-4">
+                <span class="input-group-btn">
+                <button type="button" class="btn btn-default btn-lg" ng-click="decreaseBaseScore()">
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                </button>
+                </span>
+            <input class="inline input-lg form-control" type="text" ng-model="base_score"
+                   style="text-align: center"/>
+                <span class="input-group-btn">
+                <button type="button" class="btn btn-default btn-lg" ng-click="increaseBaseScore()">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                </button>
+                </span>
+        </div>
+    </div>
+    <button class="btn btn-default btn-lg btn-block form-margin" ng-disabled="checkNames() || base_score==0"
+            ng-click="startGame()">
+        Start game
+    </button>
+</form>
